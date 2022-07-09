@@ -1,4 +1,9 @@
 site_name: 容旋坤的个人网站
 
+nav:
+  - 主页: index.md
+  - Notes:
+    - Git: Notes/Git.md
+
 theme:
   name: material
