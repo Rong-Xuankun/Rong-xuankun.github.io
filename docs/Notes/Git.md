@@ -1,7 +1,5 @@
 # Git
 
-[toc]
-
 > 参考[yangxijie的文案](https://yang-xijie.github.io/LECTURE/Git/git/)
 
 ## Git的常用操作
