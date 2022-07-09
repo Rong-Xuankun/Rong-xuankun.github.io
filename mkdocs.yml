@@ -1,1 +1,4 @@
 site_name: 容旋坤的个人网站
+
+theme:
+  name: material
