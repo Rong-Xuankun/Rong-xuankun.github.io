@@ -2,7 +2,7 @@ site_name: 容旋坤的个人网站 # 左上角标题
 
 nav:
   - Notes:
-    - MarkDown: Notes/Markdown/md
+    - MarkDown: Notes/Markdown.md
     - Git: Notes/Git.md
     - VSCode: Notes/VSCode.md
     - C: Notes/C.md
