@@ -9,13 +9,12 @@ theme:
   name: material
   palette: 
     scheme: slate # 黑暗模式
-    primary: blue gray
+    primary: blue grey
     accent: blue
   language: zh # 中文
   features:
     - navigation.tabs
     - navigation.indexes
-    - toc.integrate
     - navigation.top
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
     - search.highlight # 搜索出的文章关键词加入高亮
