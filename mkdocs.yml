@@ -1,6 +1,6 @@
 site_name: 容旋坤的个人网站 # 左上角标题
 
-nav:
+nav: # 目录
   - Notes:
     - MarkDown: Notes/Markdown.md
     - Git: Notes/Git.md
@@ -12,8 +12,8 @@ theme:
   name: material
   palette: 
     scheme: slate # 黑暗模式
-    primary: blue grey
-    accent: blue
+    primary: blue grey # 顶部的颜色
+    accent: blue # 高亮的颜色
   language: zh # 中文
   features:
     - navigation.tabs
