@@ -138,7 +138,7 @@
 
   ```
   [GitHub Official Site](https://github.com)  
-  https://github.com
+  https://github.com  
   <https://github.com>
   ```
 
