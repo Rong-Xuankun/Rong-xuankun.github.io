@@ -1,6 +1,6 @@
 # Hello!
 
-这里是容旋坤的个人网站[https://Rong-xuankun.github.io](https://qiaoyiyu617.github.io/Rong-xuankun.github.io/)
+这里是容旋坤的个人网站<https://rong-xuankun.github.io>
 
 > 记录了一些学习心得......
 
