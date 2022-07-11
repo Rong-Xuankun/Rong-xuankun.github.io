@@ -2,6 +2,8 @@
 
 > [markdown全部语法](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
+-----
+
 ## 关于Markdown
 
 ### 什么是Markdown？
