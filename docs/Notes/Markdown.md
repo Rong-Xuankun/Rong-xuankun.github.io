@@ -213,6 +213,8 @@ https://github.com/Rong-Xuankun
 
 <https://github.com/Rong-Xuankun>
 
+事实上各个网站的渲染功能不同，比如说在这个mkdocs网站上，第二种链接就不能被正常的渲染出来，但是在Github上，第二种链接则可以正常渲染出来。
+
 -----
 
 ## 在文档中插入图片（待更新）
