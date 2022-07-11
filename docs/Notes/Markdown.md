@@ -217,6 +217,14 @@ https://github.com/Rong-Xuankun
 
 -----
 
-## 在文档中插入图片（待更新）
+##  表格
+
+待更新......
+
+-----
+
+## 在文档中插入图片
 
 <div align = center><img src = "https://pic.imgdb.cn/item/62c96a43f54cd3f937eab23c.png" >
+
+-----
