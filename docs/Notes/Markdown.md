@@ -130,19 +130,89 @@
 
 > 这是一个\`高亮\`的词 -> 这是一个`高亮`的词
 
-## 链接(后面的都未完成)
+快捷键： ⌘ + E
 
-* `[Text](url)`：中括号，后面小括号。小括号里面放链接，中括号里面放说明（必须）；不需要说明的话，可以直接写链接
+-----
 
-  直接写链接会直接被转换为可以点击的链接；也可以在两侧加上`<`和`>`
+## 代码块
 
-  ```
-  [GitHub Official Site](https://github.com)  
-  https://github.com  
-  <https://github.com>
-  ```
+> 使用连续的三个 \` 来显示代码块
 
+例如：
 
+\`\`\`  
+\#include <stdio.h>  
+int main()  
+{  
+  ......  
+}  
+\`\`\`
 
+其实际显示效果为：
+
+```
+#include <stdio.h>
+int main()
+{
+  ......
+}
+```
+
+同时，可以在 \`\`\` 后面输入c、cpp、html、java等来实现部分代码块高亮：
+
+```c
+#include <stdio.h>
+int main()
+{
+  int a;
+  char b;
+  ......
+}
+```
+
+-----
+
+## 引用文本
+
+使用 `> message` 来实现引用文本：
+
+例如：
+
+> 这一篇文章的作者是容旋坤  
+> 希望看完能够有所收获
+
+实际输入方式：
+
+\> 这一篇文章的作者是容旋坤  
+\> 希望看完能够有所收获
+
+-----
+
+## 链接
+
+> 使用 `[Text](url)` 来创建链接  
+> 中括号中的内容是你想展示的链接名称，小括号中的内容是链接的实际地址  
+> 如果不想展示名称的话可以直接写链接，链接会直接转化为可以点击的链接，同时也可以在两端加上 `<` 和 `>`
+
+```
+第一种方式：
+[容旋坤的Github](https://github.com/Rong-Xuankun)
+第二种方式：
+https://github.com/Rong-Xuankun
+第三种方式：
+<https://github.com/Rong-Xuankun>
+```
+
+这三种方式的实际效果：
+
+[容旋坤的Github](https://github.com/Rong-Xuankun)
+
+https://github.com/Rong-Xuankun
+
+<https://github.com/Rong-Xuankun>
+
+-----
+
+## 在文档中插入图片（待更新）
 
 <div align = center><img src = "https://pic.imgdb.cn/item/62c96a43f54cd3f937eab23c.png" >
