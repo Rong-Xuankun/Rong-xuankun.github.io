@@ -12,10 +12,21 @@ nav: # 目录
 theme:
   name: material
   palette: 
-    scheme: slate # 黑暗模式
-    primary: blue grey # 顶部的颜色
-    accent: blue # 高亮的颜色
+    - scheme: slate # 黑暗模式
+      primary: blue grey # 顶部的颜色
+      accent: blue # 高亮的颜色
+      toggle: 
+        icon: material/weather-night
+        name: 切换至日间模式
+    - scheme: default
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至夜间模式
+
   language: zh # 中文
+
   features:
     - navigation.tabs
     - navigation.indexes
@@ -23,6 +34,9 @@ theme:
     - navigation.expand # 打开Tab时左侧目录全部展开
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
     - search.highlight # 搜索出的文章关键词加入高亮
+
+  icon: 
+    repo: fontawesome/brands/github
 
 copyright: Copyright &copy; 2022 容旋坤 # 左下角的版权声明
 
