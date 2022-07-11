@@ -14,13 +14,13 @@ theme:
   palette: 
     - scheme: slate # 黑暗模式
       primary: blue grey # 顶部的颜色
-      accent: blue # 高亮的颜色
+      accent: amber # 高亮的颜色
       toggle: 
         icon: material/weather-night
         name: 切换至日间模式
     - scheme: default
       primary: indigo
-      accent: orange
+      accent: amber
       toggle:
         icon: material/weather-sunny
         name: 切换至夜间模式
