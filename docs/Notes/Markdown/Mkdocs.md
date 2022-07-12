@@ -118,7 +118,8 @@ Settings -> Pages
 刷新一下Pages，可以看到一段英文：
 
 > Your site is ready to be published at ......  
-> 后面一段网址就是你的网站的网址
+
+后面一段网址就是你的网站的网址，接下来按照：
 
 Pages -> Source -> gh-pages -> root -> Click Save
 
