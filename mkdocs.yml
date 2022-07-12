@@ -4,7 +4,6 @@ nav: # 目录
   - Notes:
     - Notes/index.md
     - MarkDown: 
-      - Notes/Markdown/index.md
       - MarkDown语法: Notes/Markdown/Markdown的语法.md
       - Mkdocs: Notes/Markdown/Mkdocs.md
     - Git: Notes/Git.md
