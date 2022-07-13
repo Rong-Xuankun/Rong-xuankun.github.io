@@ -17,7 +17,7 @@
 
 * VSCode
 
-  在很多时候，你在写一个项目的时候，项目的说明往往会使用`README.md`也就是`markdown`文件来说明这个项目的一些事项，这个时候，你可以在使用'VSCode'编写项目代码的同时，编辑这个项目的`README.md`文件，这样就不需要另外开一个软件来写`README.md`文件，并且可以实时更新。  
+  在很多时候，你在写一个项目的时候，项目的说明往往会使用`README.md`也就是`markdown`文件来说明这个项目的一些事项，这个时候，你可以在使用`VSCode`编写项目代码的同时，编辑这个项目的`README.md`文件，这样就不需要另外开一个软件来写`README.md`文件，并且可以实时更新。  
   推荐两个插件：`Markdown All in One`和`Markdown Preview Enhanced`
 
 -----

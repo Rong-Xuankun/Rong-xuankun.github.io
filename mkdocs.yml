@@ -10,7 +10,6 @@ nav: # 目录
     - VSCode: Notes/VSCode.md
     - C: Notes/C.md
     - 数据结构: Notes/数据结构.md
-    
     - Missing-Semester:
       - Notes/Missing-Semester/index.md
       - The Shell: Notes/Missing-Semester/TheShell.md
