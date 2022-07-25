@@ -1,5 +1,7 @@
 # Shell工具和脚本
 
+> <https://missing-semester-cn.github.io/2020/shell-tools/>
+
 ## Shell脚本
 
 到目前为止，我们已经学习来如何在`shell`中执行命令，并使用管道将命令组合使用。但是，很多情况下我们需要执行一系列的操作并使用条件或循环这样的控制流。
