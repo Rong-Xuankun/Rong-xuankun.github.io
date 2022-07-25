@@ -13,6 +13,7 @@ nav: # 目录
     - Missing-Semester:
       - Notes/Missing-Semester/index.md
       - The Shell: Notes/Missing-Semester/TheShell.md
+      - Shell工具和脚本: Notes/Missing-Semester/Shell工具和脚本.md
 
 theme:
   name: material
