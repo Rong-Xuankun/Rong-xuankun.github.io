@@ -45,5 +45,87 @@ mcd () {
 
 命令通常使用`STDOUT`来返回输出值，使用`STDERR`来返回错误及错误码，便于脚本以更加友好的方式报告错误。返回码或退出状态是脚本/命令之间交流执行状态的方式。返回值0表示正常执行，其他所有非0的返回值都表示有错误发生。
 
-退出码可以搭配`&&`（与操作符）和`||`（或操作符）使用，用来进行条件判断，决定是否执行其他程序。它们都属于短路[运算符](https://en.wikipedia.org/wiki/Short-circuit_evaluation)（short-circuiting） 同一行的多个命令可以用`;`分隔。程序`true`的返回码永远是0，`false`的返回码永远是1。让我们看几个例子
+退出码可以搭配`&&`（与操作符）和`||`（或操作符）使用，用来进行条件判断，决定是否执行其他程序。它们都属于短路[运算符](https://en.wikipedia.org/wiki/Short-circuit_evaluation)（short-circuiting） 同一行的多个命令可以用`;`分隔。程序`true`的返回码永远是`0`，`false`的返回码永远是`1`。让我们看几个例子
 
+```
+rxk@qiaoyiyudeMacBook-Air ~ % false || echo "Oops, fail"
+Oops, fail
+rxk@qiaoyiyudeMacBook-Air ~ % true || echo "Will not printed"
+rxk@qiaoyiyudeMacBook-Air ~ % true && echo "Things went well"
+Things went well
+rxk@qiaoyiyudeMacBook-Air ~ % false && echo "Will not be printed"
+rxk@qiaoyiyudeMacBook-Air ~ % false ; true "This will always run"
+rxk@qiaoyiyudeMacBook-Air ~ % 
+```
+
+另一个常见的模式是以变量的形式获取一个命令的输出，这可以通过*命令替换*（command substitution）实现。
+
+另一个常见的模式是以变量的形式获取一个命令的输出，这可以通过 命令替换（command substitution）实现。
+
+当您通过`$( CMD )`这样的方式来执行`CMD`这个命令时，它的输出结果会替换掉`$( CMD )`。例如，如果执行`for file in $(ls)`，shell首先将调用`ls`，然后遍历得到的这些返回值。还有一个冷门的类似特性是 进程替换（process substitution），`<( CMD )`会执行`CMD`并将结果输出到一个临时文件中，并将`<( CMD )`替换成临时文件名。这在我们希望返回值通过文件而不是STDIN传递时很有用。例如，`diff <(ls foo) <(ls bar)`会显示文件夹`foo`和`bar`中文件的区别。
+
+说了很多，现在该看例子了，下面这个例子展示了一部分上面提到的特性。这段脚本会遍历我们提供的参数，使用`grep`搜索字符串`foobar`，如果没有找到，则将其作为注释追加到文件中。
+
+```
+#!/bin/bash
+
+echo "Starting program at $(date)" # date会被替换成日期和时间
+
+echo "Running program $0 with $# arguments with pid $$"
+
+for file in "$@"; do
+    grep foobar "$file" > /dev/null 2> /dev/null
+    # 如果模式没有找到，则grep退出状态为 1
+    # 我们将标准输出流和标准错误流重定向到Null，因为我们并不关心这些信息
+    if [[ $? -ne 0 ]]; then
+        echo "File $file does not have any foobar, adding one"
+        echo "# foobar" >> "$file"
+    fi
+done
+```
+
+在条件语句中，我们比较`$?`是否等于0。`Bash`实现了许多类似的比较操作，您可以查看[test](https://man7.org/linux/man-pages/man1/test.1.html)手册。在`bash`中进行比较时，尽量使用双方括号`[[ ]]`而不是单方括号`[ ]`，这样会降低犯错的几率，尽管这样并不能兼容`sh`。更详细的说明参见[这里](http://mywiki.wooledge.org/BashFAQ/031)。
+
+当执行脚本时，我们经常需要提供形式类似的参数。bash使我们可以轻松的实现这一操作，它可以基于文件扩展名展开表达式。这一技术被称为shell的*通配*（globbing）
+
+* `通配符` - 当你想要利用通配符进行匹配时，你可以分别使用`?`和`*`来匹配一个或任意个字符。例如，对于文件`foo`,`foo1`,`foo2`,`foo10`和`bar`,`rm foo?`这条命令会删除`foo1`和`foo2`，而`rm foo*`则会删除除了`bar`之外的所有文件。
+* `花括号{}` - 当你有一系列的指令，其中包含一段公共子串时，可以用花括号来自动展开这些命令。这在批量移动或转换文件时非常方便。
+
+```
+convert image.{png,jpg}
+# 会展开为
+convert image.png image.jpg
+
+cp /path/to/project/{foo,bar,baz}.sh /newpath
+# 会展开为
+cp /path/to/project/foo.sh /path/to/project/bar.sh /path/to/project/baz.sh /newpath
+
+# 也可以结合通配使用
+mv *{.py,.sh} folder
+# 会移动所有 *.py 和 *.sh 文件
+
+mkdir foo bar
+
+# 下面命令会创建foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h这些文件
+touch {foo,bar}/{a..h}
+touch foo/x bar/y
+# 比较文件夹 foo 和 bar 中包含文件的不同
+diff <(ls foo) <(ls bar)
+# 输出
+# < x
+# ---
+# > y
+```
+
+编写`bash`脚本有时候会很别扭和反直觉。例如[shellcheck](https://github.com/koalaman/shellcheck)这样的工具可以帮助你定位`sh/bash`脚本中的错误。
+
+注意，脚本并不一定只有用`bash`写才能在终端里调用。比如说，这是一段`Python`脚本，作用是将输入的参数倒序输出：
+
+```
+#!/usr/local/bin/python
+import sys
+for arg in reversed(sys.argv[1:]):
+    print(arg)
+```
+
+内核知道去用`python`解释器而不是`shell`命令来运行这段脚本，是因为脚本的开头第一行的[shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))。
