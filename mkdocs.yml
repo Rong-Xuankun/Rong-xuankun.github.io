@@ -9,6 +9,9 @@ nav: # 目录
     - Git: Notes/Git.md
     - VSCode: Notes/VSCode.md
     - C: Notes/C.md
+    - Python:
+      - Notes/Python/index.md
+      - 变量和简单数据类型: Notes/Python/1-变量和简单数据类型.md
     - 数据结构: Notes/数据结构.md
     - Missing-Semester:
       - Notes/Missing-Semester/index.md
