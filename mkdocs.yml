@@ -3,17 +3,24 @@ site_name: 容旋坤的个人网站 # 左上角标题
 nav: # 目录
   - Notes:
     - Notes/index.md
+
     - MarkDown: 
       - MarkDown语法: Notes/Markdown/Markdown的语法.md
       - Mkdocs: Notes/Markdown/Mkdocs.md
+
     - Git: Notes/Git.md
+
     - VSCode: Notes/VSCode.md
+
     - C: Notes/C.md
+
     - Python:
       - Notes/Python/index.md
       - 变量和简单数据类型: Notes/Python/1-变量和简单数据类型.md
       - 列表简介: Notes/Python/2-列表简介.md
+
     - 数据结构: Notes/数据结构.md
+    
     - Missing-Semester:
       - Notes/Missing-Semester/index.md
       - Course-Shell: Notes/Missing-Semester/1-Course-Shell.md
