@@ -12,6 +12,7 @@ nav: # 目录
     - Python:
       - Notes/Python/index.md
       - 变量和简单数据类型: Notes/Python/1-变量和简单数据类型.md
+      - 列表简介: Notes/Python/2-列表简介.md
     - 数据结构: Notes/数据结构.md
     - Missing-Semester:
       - Notes/Missing-Semester/index.md
