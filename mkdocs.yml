@@ -56,12 +56,7 @@ theme:
   markdown_extensions:
     - toc:
       permalink: true # 固定标题位置为当前位置
-    - pymdownx.highlight:
-        anchor_linenums: true
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
-    - pymdownx.superfences
-   
+      
   icon: 
     repo: fontawesome/brands/github
 
