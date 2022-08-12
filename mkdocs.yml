@@ -20,7 +20,7 @@ nav: # 目录
       - 列表简介: Notes/Python/2-列表简介.md
       - 操作列表: Notes/Python/3-操作列表.md
       - if语句: Notes/Python/4-if语句.md
-      - 字典: Notes/python/5-字典.md
+      - 字典: Notes/Python/5-字典.md
 
     - 数据结构: Notes/数据结构.md
     
