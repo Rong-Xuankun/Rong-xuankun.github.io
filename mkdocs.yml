@@ -23,6 +23,8 @@ nav: # 目录
       - 字典: Notes/Python/5-字典.md
 
     - 数据结构: Notes/数据结构.md
+
+    - 数字逻辑与EDA: Notes/数字逻辑与EDA.md
     
     - Missing-Semester:
       - Notes/Missing-Semester/index.md
